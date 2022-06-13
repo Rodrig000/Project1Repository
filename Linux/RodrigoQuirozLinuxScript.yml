@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#assignment
+packages=(
+    'nano'
+    'wget'
+    'net-tools'
+)
+
+# loop though the list of packages and check to see if they are installed
+for x in ${packages[@]};
+do
+    if [ $(which $x) ]
+    then
+       echo "$x is installed at $(which $x)."
+    else
+       echo "$x is not available."
+    fi
+done
